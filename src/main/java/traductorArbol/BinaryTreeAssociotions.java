@@ -36,7 +36,7 @@ public class BinaryTreeAssociotions extends BinaryTree<Associations<String, Stri
      * @param english palabra a analizar
      * @return palabra traducida o palabra dentro de los carácteres
      */
-    private String englishToTohers(String english){
+    public String englishToTohers(String english){
         String words = "";
         words = searchWords(this, english);
         if (words.equals("")){

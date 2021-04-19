@@ -156,17 +156,28 @@ public class BinaryTree<R> {
         return root == null;
     }
 
-
+    /***
+     * Obtiene el valor del nodo
+     * @return valor del nodo
+     */
     public R val()
     {
         return value;
     }
 
+    /***
+     * establece el valor del nodo
+     * @param val valor a establecer
+     */
     public void setValue(R val)
      {
         value = val;
     }
 
+    /***
+     * se verifica el hijo izquierdo
+     * @return si tiene un hijo o no
+     */
     public boolean hasLeftChild() {
         if(left==null) {
             return false;
@@ -174,6 +185,11 @@ public class BinaryTree<R> {
             return true;
         }
     }
+
+    /***
+     * Se verifica el hijo derecho
+     * @return si tiene un hijo o no
+     */
     public boolean hasRightChild() {
         if(right==null) {
             return false;
