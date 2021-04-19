@@ -12,7 +12,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
-import java.nio.*;
 import java.io.*;
 import java.util.stream.Stream;
 
@@ -33,11 +32,12 @@ public class Controller {
 
         System.out.println("Bienvenido al traductor");
 
+        //Carga del archivo
         try {
             Stream<String> lines = Files.lines(Paths.get("diccionario.txt"), StandardCharsets.UTF_8);
             lines.forEach(i->{
                 String english = i.substring(i.indexOf("(")+1, i.indexOf(","));
-                String spanish = i.substring(i.indexOf(",")+2, i.indexOf(")"));
+                String spanish = i.substring(i.indexOf(",")+2, i.indexOf(","));
                 String french = i.substring(i.indexOf(",")+3, i.indexOf(")"));
                 Associations<String, String, String> association = new Associations<String, String, String>(english, spanish, french);
                 BinaryTreeAssociotions SubTree = new BinaryTreeAssociotions(association);
@@ -49,7 +49,7 @@ public class Controller {
         }
 
         String s;
-        //Despliega el menu
+        //Menu
         do {
             System.out.println("Ingresa el número de una opcion del menu:" +
                     "\n1.Mostrar la colección ordenada por ingles" +
